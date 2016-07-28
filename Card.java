@@ -1,6 +1,6 @@
-class Card {
-    private String suit;            //can have value such as club, diamond,
-    private int pip;
+class Card implements Comparable{
+    protected String suit;
+    protected int pip;
 
     public Card(String suit, int pip){
         this.suit = suit;
@@ -21,17 +21,15 @@ class Card {
         if(pip == 13) return "K";
         return "" + pip;
     }
-    /*
     @Override
     public int compareTo(Object anotherCard){
-        if(this.pip > ((Card)anotherCard).pip) return 1;
-        if(this.pip < ((Card)anotherCard).pip) return -1;
+        if(this.pip > ((Card) anotherCard).pip) return 1;
+        if(this.pip < ((Card) anotherCard).pip) return -1;
         return 0;
     }
-    */
     @Override
     public String toString(){
-        return "" + pip + suit;
+        return suit + " " + pip;
     }
     public int comparePip(Card anotherCard){
         if(this.pip > anotherCard.pip) return 1;
