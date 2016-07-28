@@ -3,6 +3,7 @@ public class Pack {
     Joker[] jokers;
     private final int NUMOFSUITS = 4;
     private final int NUMOFCARDSINASUIT = 13;
+
     Pack (int numOfJokers){
         String suit = "";
         for (int suitIter = 1; suitIter <= NUMOFSUITS; suitIter++) {
@@ -18,4 +19,6 @@ public class Pack {
             jokers[jokerIter] = new Joker();
         }
     }
+
+
 }
