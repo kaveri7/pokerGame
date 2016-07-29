@@ -23,9 +23,11 @@ class Card implements Comparable{
     }
     @Override
     public int compareTo(Object anotherCard){
-        if(this.pip > ((Card) anotherCard).pip) return 1;
+        return (this.pip - ((Card) anotherCard).pip);
+        /*if(this.pip > ((Card) anotherCard).pip) return 1;
         if(this.pip < ((Card) anotherCard).pip) return -1;
         return 0;
+        */
     }
     @Override
     public String toString(){
