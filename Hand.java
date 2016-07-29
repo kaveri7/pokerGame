@@ -13,6 +13,13 @@ public class Hand {
             cards[i] = myDeck.cards[i];
         }
     }
+
+    public static void main(String[] args) {
+        Hand myHand = new Hand();
+        System.out.println(myHand);
+        System.out.println(myHand.display());
+    }
+
     public String toString(){
         String myCards = "";
         for(int i = 0; i < cardsInOneHand; i++){
@@ -20,12 +27,6 @@ public class Hand {
         }
         return myCards;
     }
-    public static void main(String[] args) {
-        Hand myHand = new Hand();
-        System.out.println(myHand);
-        System.out.println(myHand.display());
-    }
-
     public String display() {
         if (isSuitSameForAll5Cards() && isAllCardsNextToEachOther() && isFirstCardTen()) {
             return "Royal Flush";
@@ -94,6 +95,7 @@ public class Hand {
                 count = 1;
             }
         }
+        if (count > maxcount) maxcount = count;
         return maxcount;
     }
     public boolean isTwoPair(){
@@ -110,6 +112,9 @@ public class Hand {
                 if(count > maxCount) maxCount = count;
                 count = 1;
             }
+        }
+        if(maxCountOfSamePip() == 3){
+            return (numOfPairs >= 3);
         }
         return (numOfPairs >= 2);
     }
